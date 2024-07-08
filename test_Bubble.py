@@ -1,5 +1,6 @@
 import unittest
 from Bubble import BubbleSort
+from Selection import SelectionSort
 
 
 class Bubblesort(unittest.TestCase):
@@ -37,6 +38,32 @@ class Bubblesort(unittest.TestCase):
 
     def test_single(self):
         self.assertEqual(BubbleSort(self.single), self.single)
+
+    def test_steps_SelectionSort(self):
+        for test, expectedResult in self.cases:
+            self.assertEqual(SelectionSort(test), expectedResult)
+
+
+    def test_NoChange(self):
+        NoChange_steps = [1, 2, 5, 10]
+        self.assertEqual(SelectionSort(self.nochange), NoChange_steps)
+
+    def test_Descend(self):
+        Descend_steps = [[10, 9, 8, 7],
+                        [7, 9, 8, 10],
+                        [7, 8, 9, 10],
+                        [7, 8, 9, 10]
+                        ]
+        self.assertEqual(SelectionSort(self.descend, True), Descend_steps)
+
+
+    def test_Same(self):
+        Same = [[8, 8, 8]]
+        self.assertEqual(SelectionSort(self.same), [8, 8, 8])
+
+    def test_Single(self):
+        self.assertEqual(SelectionSort(self.single), self.single)
+
 
 
 if __name__ == '__main__':  #as we have imported another module
