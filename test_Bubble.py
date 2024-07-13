@@ -17,8 +17,10 @@ class TestBubbleSortingAlgorithms(unittest.TestCase):
     def test_descend(self):
         descend = [10, 9, 8, 7]  #Test Data
         descend_steps = [
-            [10, 9, 8, 7], [9, 10, 8, 7], [9, 8, 10, 7], [9, 8, 7, 10],
-            [8, 9, 7, 10], [8, 7, 9, 10], [7, 8, 9, 10]
+            [10, 9, 8, 7],
+            [9, 8, 7, 10],
+            [8, 7, 9, 10],
+            [7, 8, 9, 10]
         ]              #Expected steps
         self.assertEqual(BubbleSort(descend, True), descend_steps)
 
