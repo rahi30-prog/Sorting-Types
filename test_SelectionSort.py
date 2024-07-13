@@ -33,7 +33,7 @@ class TestSelectionSortingAlgorithms(unittest.TestCase):
 
     def test_Single(self):
         single = [1]     #Test Data
-        self.assertEqual(SelectionSort(single), single)
+        self.assertEqual(SelectionSort(single), [1])
 
 if __name__ == '__main__':
     unittest.main()
